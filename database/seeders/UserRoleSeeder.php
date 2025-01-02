@@ -4,8 +4,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use App\Models\Role;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UserRoleSeeder extends Seeder
@@ -19,6 +19,7 @@ class UserRoleSeeder extends Seeder
         // If there are no roles in the system, exit
         if ($roles->isEmpty()) {
             $this->command->info('No roles found in the system.');
+
             return;
         }
 

@@ -9,6 +9,8 @@ class UnionCouncil extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'tehsil_id'];
+
     public function tehsil()
     {
         return $this->belongsTo(Tehsil::class);
@@ -21,6 +23,6 @@ class UnionCouncil extends Model
 
     public function polioWorkers()
     {
-        // return $this->belongsToMany(Ps);
+        return $this->belongsToMany(User::class, 'polio_worker_union_council', 'union_council_id', 'polio_worker_id');
     }
 }

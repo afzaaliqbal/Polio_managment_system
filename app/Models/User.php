@@ -33,6 +33,26 @@ class User extends Authenticatable
         return $this->roles()->where('name', $role)->exists();
     }
 
+    public function isPolioWorker()
+    {
+        return $this->roles()->where('name', 'worker')->exists();
+    }
+
+    public function isAdmin()
+    {
+        return $this->roles()->where('name', 'admin')->exists();
+    }
+
+    public function unionCouncils()
+    {
+        return $this->belongsToMany(UnionCouncil::class, 'polio_worker_union_council', 'union_council_id', 'polio_worker_id');
+    }
+
+    public function assigned_area()
+    {
+        return $this->belongsToMany(UnionCouncil::class, 'polio_worker_union_council', 'polio_worker_id', 'union_council_id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
