@@ -11,7 +11,7 @@
         <strong>Email:</strong> {{ $worker->email }}
     </div>
     <div class="mb-3">
-        <strong>Assigned Area:</strong> {{ $worker->assigned_area }}
+         <strong>Assigned Area:</strong>  @foreach($worker->assigned_area as $area) {{ $area->name }},  @endforeach
     </div>
 
     <a href="{{ route('admin.polio-workers') }}" class="btn btn-primary">Back to Workers List</a>

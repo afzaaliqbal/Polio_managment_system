@@ -20,9 +20,7 @@
         <div class="mb-3">
             <label for="assigned_area" class="form-label">Assigned Area</label>
             <input type="text" class="form-control" name="assigned_area" id="assigned_area" 
-            @foreach($worker->assigned_area as $area)
-             value="{{ $area->name }}">
-            @endforeach
+            value="@foreach($worker->assigned_area as $area){{ $area->name }}, @endforeach">
                
         </div>
 
