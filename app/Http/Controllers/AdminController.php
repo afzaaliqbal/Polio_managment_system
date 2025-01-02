@@ -96,7 +96,7 @@ class AdminController extends Controller
         $worker = User::findOrFail($id);
         $worker->update($request->all());
 
-        return redirect()->route('Admin.polio-workers');
+        return redirect()->route('admin.polio-workers');
     }
 
     /**

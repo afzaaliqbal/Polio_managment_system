@@ -6,7 +6,7 @@
     <a href="{{ route('admin.polio-workers') }}" class="btn btn-primary">Back to Workers List</a>
     <form action="{{ route('admin.polio-worker.update', $worker->id) }}" method="POST">
         @csrf
-        @method('PUT')
+        @method('PATCH')
 
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
